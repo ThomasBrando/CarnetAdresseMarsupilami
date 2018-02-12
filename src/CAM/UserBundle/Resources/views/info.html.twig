@@ -1,0 +1,20 @@
+{% extends "CAMCoreBundle::layout.html.twig" %}
+
+{% block title %}Informations{% endblock %}
+
+{% block section %}
+<p>Informations de {{ app.user}}<p>
+
+<ul>
+{% for key_info, value_info in infos %}
+  	<li>
+    	<span>{{ key_info }} :</span> 
+    	{% if value_info is null %}
+      		<span>Valeur inconue ! <a href="{{ path('info_edit') }}">Modifier</a></span>
+    	{% else %}
+      		<span>{{ value_info }}</span>
+    	{% endif %}
+  	</li>
+{% endfor %}
+</ul>
+{% endblock %}

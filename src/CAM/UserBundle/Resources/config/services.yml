@@ -1,0 +1,4 @@
+services:
+#    cam_user.example:
+#        class: CAM\UserBundle\Example
+#        arguments: ["@service_id", "plain_value", "%parameter%"]

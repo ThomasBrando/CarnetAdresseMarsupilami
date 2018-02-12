@@ -1,0 +1,17 @@
+{# Layout pour les vues par defaut de FOSUserBundle #}
+
+{% extends "CAMCoreBundle::layout.html.twig" %}
+
+{% block section %}
+  {% for key, messages in app.session.flashbag.all() %}
+    {% for message in messages %}
+      <div class="alert alert-{{ key }}">
+        {{ message|trans({}, 'FOSUserBundle') }}
+      </div>
+    {% endfor %}
+  {% endfor %}
+
+  {% block fos_user_content %}
+  {% endblock fos_user_content %}
+
+{% endblock %}

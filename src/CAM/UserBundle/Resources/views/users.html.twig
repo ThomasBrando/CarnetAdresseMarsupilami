@@ -1,0 +1,16 @@
+{% extends "CAMCoreBundle::layout.html.twig" %}
+
+{% block title %}Liste d'amis{% endblock %}
+
+{% block section %}
+	<p>Liste des utilisateurs<p>
+
+	{# On ne verifie pas si la liste est vide car il y'a au moins un utilisateur enregistré, vous! #}
+	<ul>
+	{% for user in userslist %}		
+	  	<li>
+	    	<p>{{user.username}} <a href="{{ path('friends_add', { 'id': user.id }) }}">Ajouter en ami</a></p>
+	  	</li>
+	{% endfor %}
+	</ul>
+{% endblock %}

@@ -1,0 +1,10 @@
+{% extends "CAMCoreBundle::layout.html.twig" %}
+
+{% block title %}Modifier vos informations{% endblock %}
+
+{% block section %}
+<p>Modifier les informations de {{ app.user}}<p>
+
+{{ form(form) }}
+
+{% endblock %}

@@ -1,0 +1,26 @@
+info:
+    path: /info
+    defaults: { _controller: CAMUserBundle:User:infoView}
+info_edit:
+  path: /info/edit
+  defaults: { _controller: CAMUserBundle:User:infoEdit}
+
+users:
+  path: /users
+  defaults: { _controller: CAMUserBundle:User:usersView}
+
+friends:
+  path: /friends
+  defaults: { _controller: CAMUserBundle:User:friendsView}
+
+friends_add:
+  path: /friends/add/{id}
+  defaults: { _controller: CAMUserBundle:User:friendsAdd}
+  requirements:
+    id: \d*
+
+friends_remove:
+  path: /friends/remove/{id}
+  defaults: { _controller: CAMUserBundle:User:friendsRemove}
+  requirements:
+    id: \d*

@@ -1,0 +1,18 @@
+{% extends "CAMCoreBundle::layout.html.twig" %}
+
+{% block title %}Liste d'amis{% endblock %}
+
+{% block section %}
+	<p>Liste d'amis de {{ app.user}}<p>
+	{% if friendlist is empty %}
+		<span>Vous n'avez aucun ami... <a href="{{ path('users') }}">Ajoutez-en</a> !</span>
+	{% endif %}
+
+	<ul>
+	{% for friend in friendlist %}		
+	  	<li>{{friend.username}}</li>
+	{% endfor %}
+	</ul>
+
+<a href="{{ path('users') }}">Ajouter un ami</a> {# Accès a la liste des users avec possibilité d'ajouter en ami #}
+{% endblock %}
